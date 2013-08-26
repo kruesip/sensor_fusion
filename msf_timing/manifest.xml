@@ -10,7 +10,7 @@
   <url>http://ros.org/wiki/msf_timing</url>
   
   <export>
-    <cpp cflags="-std=c++11 -I${prefix}/include" lflags="-L${prefix}/lib
+    <cpp cflags="-std=c++0x -I${prefix}/include" lflags="-L${prefix}/lib
          -lmsf_timing" />
   </export>
   

@@ -183,11 +183,12 @@ void PoseSensorHandler<MEASUREMENT_TYPE, MANAGER_TYPE>::measurementCallback(
           << this->topic_namespace_ << "/" << subTransformStamped_.getTopic()
           << " ***");
 
-  if (msg->header.seq % 5 != 0) {  // Slow down vicon.
-    MSF_WARN_STREAM_THROTTLE(30, "Measurement throttling is on, dropping every "
-                             "but the 5th message");
-    return;
-  }
+  // commented out (PK)
+//   if (msg->header.seq % 5 != 0) {  // Slow down vicon.
+//     MSF_WARN_STREAM_THROTTLE(30, "Measurement throttling is on, dropping every "
+//                              "but the 5th message");
+//     return;
+//   }
 
   geometry_msgs::PoseWithCovarianceStampedPtr pose(
       new geometry_msgs::PoseWithCovarianceStamped());

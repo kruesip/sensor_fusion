@@ -23,7 +23,7 @@ include(${dynamic_reconfigure_PACKAGE_PATH}/cmake/cfgbuild.cmake)
 gencfg()
 #rosbuild_genmsg()
 
-add_definitions (-Wall -std=c++11 -Wno-unused-parameter)
+add_definitions (-Wall -std=c++0x -Wno-unused-parameter)
 
 # Enable timing the core
 add_definitions (-DENABLE_MSF_TIMING)

@@ -1,4 +1,5 @@
 <launch>
+    <!--node launch-prefix="gdb -ex run --args" name="msf_position_pose_sensor" pkg="msf_updates" type="position_pose_sensor" clear_params="true" output="screen"-->
  <node name="msf_position_pose_sensor" pkg="msf_updates" type="position_pose_sensor" clear_params="true" output="screen">
         <!--remap from="msf_core/hl_state_input" to="/auk/fcu/ekf_state_out" /--> <!--HL STATE-->
         <!--remap from="msf_core/correction" to="/auk/fcu/ekf_state_in"/-->
@@ -8,7 +9,7 @@
 	<remap from="msf_core/imu_state_input" to="/imu/data" /> <!--IMU-->
 
         <!--remap from="msf_updates/position_input" to="/leica/position" /--> <!--LEICA-->
-	<remap from="msf_updates/position_input" to="/gps/utm_point" /> <!--GPS UTM-->
+	<remap from="msf_updates/position_input" to="/gps/utm_point2" /> <!--GPS UTM-->
         <!--remap from="msf_updates/navsatfix_input" to="/auk/fcu/gps" /-->  <!--GPS-->
 	    	
         <!--remap from="msf_updates/transform_input" to="vicon/auk/auk" /--> <!--VICON-->

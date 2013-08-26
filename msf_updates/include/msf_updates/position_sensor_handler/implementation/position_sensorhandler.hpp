@@ -145,11 +145,12 @@ void PositionSensorHandler<MEASUREMENT_TYPE, MANAGER_TYPE>::measurementCallback(
           << this->topic_namespace_ << "/" << subTransformStamped_.getTopic()
           << " ***");
 
-  if (msg->header.seq % 5 != 0) {  //slow down vicon
-    MSF_WARN_STREAM_ONCE("Measurement throttling is on, dropping every but the "
-                         "5th message");
-    return;
-  }
+  // commented out (PK)
+//   if (msg->header.seq % 5 != 0) {  //slow down vicon
+//     MSF_WARN_STREAM_ONCE("Measurement throttling is on, dropping every but the "
+//                          "5th message");
+//     return;
+//   }
 
   msf_updates::PointWithCovarianceStampedPtr pointwCov(
       new msf_updates::PointWithCovarianceStamped);

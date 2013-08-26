@@ -20,7 +20,7 @@
 
   <export>
     <cpp cflags="`pkg-config --cflags eigen3 ` `pkg-config --cflags opencv` 
-        -std=c++11 -I${prefix}/include -I${prefix}/cfg/cpp" lflags="-L${prefix}/lib
+        -std=c++0x -I${prefix}/include -I${prefix}/cfg/cpp" lflags="-L${prefix}/lib
          -lmsf_core `pkg-config --libs opencv`" />
   </export>
 </package>
