@@ -64,7 +64,7 @@ PoseSensorHandler<MEASUREMENT_TYPE, MANAGER_TYPE>::PoseSensorHandler(
       nh.subscribe < geometry_msgs::PoseWithCovarianceStamped
           > ("pose_with_covariance_input", 20, &PoseSensorHandler::measurementCallback, this);
   subTransformStamped_ = nh.subscribe < geometry_msgs::TransformStamped
-      > ("transform_input", 20, &PoseSensorHandler::measurementCallback, this);
+      > ("pose_transform_input", 20, &PoseSensorHandler::measurementCallback, this);
   subPoseStamped_ = nh.subscribe < geometry_msgs::PoseStamped
       > ("pose_input", 20, &PoseSensorHandler::measurementCallback, this);
 

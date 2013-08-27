@@ -21,7 +21,7 @@
         <!--DISTORTED-->
 <!--         <remap from="msf_updates/navsatfix_input" to="/msf_distort/navsatfix_output" />  -->
 <!--         <remap from="msf_updates/pose_with_covariance_input" to="/msf_distort/pose_with_covariance_output" /> -->
-	<remap from="msf_updates/transform_input" to="/IcpNavigation/pose_estimate" />
+	<remap from="msf_updates/pose_transform_input" to="/IcpNavigation/pose_estimate" />
 
         <rosparam file="$(find msf_updates)/position_pose_sensor_fix_artor.yaml"/>
     </node>
