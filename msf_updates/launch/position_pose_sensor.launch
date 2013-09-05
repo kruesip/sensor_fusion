@@ -24,6 +24,4 @@
 
         <rosparam file="$(find msf_updates)/position_pose_sensor_fix_artor.yaml"/>
     </node>
-    
-    <node name="rqt_reconfigure" pkg="rqt_reconfigure" type="rqt_reconfigure"/>
 </launch>
