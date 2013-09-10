@@ -28,6 +28,7 @@
 #include <msf_updates/position_sensor_handler/position_sensorhandler.h>
 #include <msf_updates/position_sensor_handler/position_measurement.h>
 #include <msf_updates/PositionPoseSensorConfig.h>
+#include <std_srvs/Empty.h>
 
 namespace msf_updates {
 
@@ -71,6 +72,8 @@ class PositionPoseSensorManager : public msf_core::MSF_SensorManagerROS<
     ReconfigureServer::CallbackType f = boost::bind(&this_T::config, this, _1,
                                                     _2);
     reconf_server_->setCallback(f);
+    
+    initServer_ = pnh.advertiseService("init_filter", &PositionPoseSensorManager::initFilterCallback, this);
   }
   virtual ~PositionPoseSensorManager() {
   }
@@ -86,6 +89,8 @@ class PositionPoseSensorManager : public msf_core::MSF_SensorManagerROS<
 
   Config_T config_;
   ReconfigureServerPtr reconf_server_;  ///< Dynamic reconfigure server.
+  
+  ros::ServiceServer initServer_;	/// server for initialization (added PK)
 
   /**
    * \brief Dynamic reconfigure callback.
@@ -119,6 +124,13 @@ class PositionPoseSensorManager : public msf_core::MSF_SensorManagerROS<
       init(scale);
       config.core_set_height = false;
     }
+  }
+  
+  bool initFilterCallback(std_srvs::Empty::Request &req, std_srvs::Empty::Response &res)
+  {
+    init(config_.pose_initial_scale);
+    ROS_INFO("Initialized filter with initial scale = %.2f", config_.pose_initial_scale);
+    return true;
   }
 
   void init(double scale) const {
