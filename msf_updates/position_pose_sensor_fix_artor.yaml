@@ -9,8 +9,8 @@ core/core_fixed_bias: false # TODO
 # core/core_noise_accbias: 0.0083
 # core/core_noise_gyr: 0.0013
 # core/core_noise_gyrbias: 0.00013
-core/core_noise_acc: 0.0083
-core/core_noise_accbias: 0.00083
+core/core_noise_acc: 0.083
+core/core_noise_accbias: 0.0083
 core/core_noise_gyr: 0.0013
 core/core_noise_gyrbias: 0.00013
 
