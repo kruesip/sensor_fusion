@@ -9,10 +9,10 @@ core/core_fixed_bias: false # TODO
 # core/core_noise_accbias: 0.0083
 # core/core_noise_gyr: 0.0013
 # core/core_noise_gyrbias: 0.00013
-core/core_noise_acc: 0.083
-core/core_noise_accbias: 0.0083
-core/core_noise_gyr: 0.0013
-core/core_noise_gyrbias: 0.00013
+core/core_noise_acc: 0.02
+core/core_noise_accbias: 0.002
+core/core_noise_gyr: 0.00087
+core/core_noise_gyrbias: 0.000087
 
 # TODO
 pose_sensor/pose_fixed_scale: true                      # fix scale min: False, default: False, max: True
