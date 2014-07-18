@@ -20,6 +20,7 @@
   <depend package="pcl_ros"/>
   <depend package="rosbag"/>
   <depend package="ptam_com"/>
+  <depend package="msf_core"/>
   
   
 </package>

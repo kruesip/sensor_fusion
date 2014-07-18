@@ -27,6 +27,7 @@
 #include <sm/kinematics/Transformation.hpp>
 #include <sm/kinematics/quaternion_algebra.hpp>
 #include <ros/package.h>
+#include <msf_core/msf_macros.h>
 
 Eigen::Matrix<double, 3, 1> getPosition(geometry_msgs::TransformStampedConstPtr tf){
   Eigen::Matrix<double, 3, 1> pos;
